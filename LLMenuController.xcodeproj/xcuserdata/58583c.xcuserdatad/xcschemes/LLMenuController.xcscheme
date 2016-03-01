@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8A4386001C85631D004C24B8"
-               BuildableName = "LLNavigationController.app"
+               BuildableName = "LLMenuController.app"
                BlueprintName = "LLMenuController"
                ReferencedContainer = "container:LLMenuController.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8A4386001C85631D004C24B8"
-            BuildableName = "LLNavigationController.app"
+            BuildableName = "LLMenuController.app"
             BlueprintName = "LLMenuController"
             ReferencedContainer = "container:LLMenuController.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8A4386001C85631D004C24B8"
-            BuildableName = "LLNavigationController.app"
+            BuildableName = "LLMenuController.app"
             BlueprintName = "LLMenuController"
             ReferencedContainer = "container:LLMenuController.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8A4386001C85631D004C24B8"
-            BuildableName = "LLNavigationController.app"
+            BuildableName = "LLMenuController.app"
             BlueprintName = "LLMenuController"
             ReferencedContainer = "container:LLMenuController.xcodeproj">
          </BuildableReference>

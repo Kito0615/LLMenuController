@@ -36,7 +36,7 @@
     for (int i = 0; i < titles.count; i ++) {
         NSString * title = titles[i];
         
-        CGFloat titleW = [title boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, 40) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:45]} context:nil].size.width;
+        CGFloat titleW = [title boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, 40) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:30]} context:nil].size.width;
         CGFloat titleH = 40;
         CGFloat titleX = lastTitleX + lastTitleW;
         CGFloat titleY = 0;

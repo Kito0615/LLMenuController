@@ -23,12 +23,13 @@
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.backgroundColor = [UIColor whiteColor];
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 7; i ++) {
+    for (int i = 0; i < 6; i ++) {
         UITableViewController * subViewController = [[UITableViewController alloc] init];
         subViewController.view.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 255.0 green:arc4random() % 255 / 255.0 blue:arc4random() % 255 / 255.0 alpha:1];
         [controllers addObject:subViewController];
     }
-    VC = [[ViewController alloc] initWithControllers:controllers titles:@[@"新闻", @"本地", @"国际", @"国内", @"科技", @"社会", @"财经"]];
+    VC = [[ViewController alloc] initWithControllers:controllers titles:@[@"最新资讯", @"重要新闻", @"手机", @"电脑", @"X-Box", @"微软相关"]];
+    VC.title = @"新闻分类";
     VC.menuBackgroundColor = [UIColor lightGrayColor];
     VC.menuTitleColor = [UIColor redColor];
     VC.menuSelecteColor = [UIColor greenColor];
