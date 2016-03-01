@@ -10,6 +10,10 @@
 
 @interface LLMenuController : UIViewController
 
+@property (nonatomic, retain) UIColor * menuSelecteColor;
+@property (nonatomic, retain) UIColor * menuTitleColor;
+@property (nonatomic, retain) UIColor * menuBackgroundColor;
+
 - (instancetype)initWithControllers:(NSArray *)controllers titles:(NSArray *)titles;
 
 @end

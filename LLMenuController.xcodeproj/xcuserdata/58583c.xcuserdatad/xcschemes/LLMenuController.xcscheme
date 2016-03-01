@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8A4386001C85631D004C24B8"
-               BuildableName = "LLMenuController.app"
+               BuildableName = "LLNavigationController.app"
                BlueprintName = "LLMenuController"
                ReferencedContainer = "container:LLMenuController.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8A4386191C85631E004C24B8"
-               BuildableName = "LLMenuControllerTests.xctest"
+               BuildableName = "LLMenuController.xctest"
                BlueprintName = "LLMenuControllerTests"
                ReferencedContainer = "container:LLMenuController.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8A4386241C85631E004C24B8"
-               BuildableName = "LLMenuControllerUITests.xctest"
+               BuildableName = "LLMenuController.xctest"
                BlueprintName = "LLMenuControllerUITests"
                ReferencedContainer = "container:LLMenuController.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8A4386001C85631D004C24B8"
-            BuildableName = "LLMenuController.app"
+            BuildableName = "LLNavigationController.app"
             BlueprintName = "LLMenuController"
             ReferencedContainer = "container:LLMenuController.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8A4386001C85631D004C24B8"
-            BuildableName = "LLMenuController.app"
+            BuildableName = "LLNavigationController.app"
             BlueprintName = "LLMenuController"
             ReferencedContainer = "container:LLMenuController.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8A4386001C85631D004C24B8"
-            BuildableName = "LLMenuController.app"
+            BuildableName = "LLNavigationController.app"
             BlueprintName = "LLMenuController"
             ReferencedContainer = "container:LLMenuController.xcodeproj">
          </BuildableReference>

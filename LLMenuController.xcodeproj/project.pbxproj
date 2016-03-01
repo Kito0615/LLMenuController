@@ -44,10 +44,10 @@
 		8A4386101C85631D004C24B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A4386131C85631D004C24B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A4386151C85631D004C24B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A43861A1C85631E004C24B8 /* LLMenuControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LLMenuControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A43861A1C85631E004C24B8 /* LLMenuController.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LLMenuController.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A43861E1C85631E004C24B8 /* LLMenuControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLMenuControllerTests.m; sourceTree = "<group>"; };
 		8A4386201C85631E004C24B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A4386251C85631E004C24B8 /* LLMenuControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LLMenuControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A4386251C85631E004C24B8 /* LLMenuController.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LLMenuController.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4386291C85631E004C24B8 /* LLMenuControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLMenuControllerUITests.m; sourceTree = "<group>"; };
 		8A43862B1C85631E004C24B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A4386381C856370004C24B8 /* LLMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMenuController.h; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				8A4386011C85631D004C24B8 /* LLMenuController.app */,
-				8A43861A1C85631E004C24B8 /* LLMenuControllerTests.xctest */,
-				8A4386251C85631E004C24B8 /* LLMenuControllerUITests.xctest */,
+				8A43861A1C85631E004C24B8 /* LLMenuController.xctest */,
+				8A4386251C85631E004C24B8 /* LLMenuController.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 			);
 			name = LLMenuControllerTests;
 			productName = LLMenuControllerTests;
-			productReference = 8A43861A1C85631E004C24B8 /* LLMenuControllerTests.xctest */;
+			productReference = 8A43861A1C85631E004C24B8 /* LLMenuController.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8A4386241C85631E004C24B8 /* LLMenuControllerUITests */ = {
@@ -213,7 +213,7 @@
 			);
 			name = LLMenuControllerUITests;
 			productName = LLMenuControllerUITests;
-			productReference = 8A4386251C85631E004C24B8 /* LLMenuControllerUITests.xctest */;
+			productReference = 8A4386251C85631E004C24B8 /* LLMenuController.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -429,7 +429,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Digiarty.LLMenuController;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LLMenuController;
 			};
 			name = Debug;
 		};
@@ -441,7 +441,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Digiarty.LLMenuController;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LLMenuController;
 			};
 			name = Release;
 		};
@@ -452,7 +452,7 @@
 				INFOPLIST_FILE = LLMenuControllerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Digiarty.LLMenuControllerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LLMenuController;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLMenuController.app/LLMenuController";
 			};
 			name = Debug;
@@ -464,7 +464,7 @@
 				INFOPLIST_FILE = LLMenuControllerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Digiarty.LLMenuControllerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LLMenuController;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLMenuController.app/LLMenuController";
 			};
 			name = Release;
@@ -475,7 +475,7 @@
 				INFOPLIST_FILE = LLMenuControllerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Digiarty.LLMenuControllerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LLMenuController;
 				TEST_TARGET_NAME = LLMenuController;
 				USES_XCTRUNNER = YES;
 			};
@@ -487,7 +487,7 @@
 				INFOPLIST_FILE = LLMenuControllerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Digiarty.LLMenuControllerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LLMenuController;
 				TEST_TARGET_NAME = LLMenuController;
 				USES_XCTRUNNER = YES;
 			};
@@ -512,6 +512,7 @@
 				8A4386301C85631E004C24B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A4386311C85631E004C24B8 /* Build configuration list for PBXNativeTarget "LLMenuControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +521,7 @@
 				8A4386331C85631E004C24B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A4386341C85631E004C24B8 /* Build configuration list for PBXNativeTarget "LLMenuControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +530,7 @@
 				8A4386361C85631E004C24B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

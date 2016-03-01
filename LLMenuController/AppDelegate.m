@@ -29,6 +29,9 @@
         [controllers addObject:subViewController];
     }
     VC = [[ViewController alloc] initWithControllers:controllers titles:@[@"新闻", @"本地", @"国际", @"国内", @"科技", @"社会", @"财经"]];
+    VC.menuBackgroundColor = [UIColor lightGrayColor];
+    VC.menuTitleColor = [UIColor redColor];
+    VC.menuSelecteColor = [UIColor greenColor];
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:VC];
     _window.rootViewController = nav;
     [_window makeKeyAndVisible];

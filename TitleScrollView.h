@@ -16,6 +16,11 @@
 
 @interface TitleScrollView : UIScrollView
 
+@property (nonatomic, retain) UIColor * titleColor;
+@property (nonatomic, retain) UIColor * backgroundColor;
+@property (nonatomic, retain) UIColor * selectedColor;
+
+
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, retain) id <TapTitleProtocol> tapDelegate;
 

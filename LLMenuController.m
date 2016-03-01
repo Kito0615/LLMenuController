@@ -21,6 +21,14 @@
 
 @implementation LLMenuController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+}
+
 - (instancetype)initWithControllers:(NSArray *)controllers titles:(NSArray *)titles
 {
     if (self = [super init]) {
@@ -70,10 +78,27 @@
     }
 }
 
+#pragma mark -Setters
+- (void)setMenuTitleColor:(UIColor *)menuTitleColor
+{
+    _titleScroll.titleColor = menuTitleColor;
+}
+
+- (void)setMenuSelecteColor:(UIColor *)menuSelecteColor
+{
+    _titleScroll.selectedColor = menuSelecteColor;
+}
+
+- (void)setMenuBackgroundColor:(UIColor *)menuBackgroundColor
+{
+    _titleScroll.backgroundColor = menuBackgroundColor;
+}
+
 #pragma mark -TapTitleProtocol
 - (void)tapFrom:(NSInteger)from to:(NSInteger)to
 {
     [_controllerScroll setContentOffset:CGPointMake(to * [UIScreen mainScreen].bounds.size.width, 0) animated:YES];
 }
+
 
 @end

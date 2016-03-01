@@ -9,7 +9,9 @@
 #import "TitleScrollView.h"
 @interface TitleScrollView()
 {
+    NSArray * _titles;
     UILabel * _titleLabel;
+    UIView * _backgroundView;
     UIView * _selectedView;
 }
 @end
@@ -19,6 +21,7 @@
 - (instancetype)initWithTitles:(NSArray *)titles
 {
     if (self = [super initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 40)]) {
+        _titles = titles;
         self.backgroundColor = [UIColor greenColor];
         self.currentIndex = 0;
         [self setupTitles:titles];
@@ -44,7 +47,7 @@
         _titleLabel.text = title;
         _titleLabel.font = [UIFont systemFontOfSize:25];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.textColor = [UIColor redColor];
+//        _titleLabel.textColor = [UIColor redColor];
         _titleLabel.userInteractionEnabled = YES;
         
         UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLabel:)];
@@ -55,15 +58,15 @@
         lastTitleW = titleW;
         self.contentSize = CGSizeMake(lastTitleX + lastTitleW, 40);
         
-        UIView * backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.contentSize.width, 40)];
-        backgroundView.backgroundColor = [UIColor blueColor];
-        [self addSubview:backgroundView];
-        [self sendSubviewToBack:backgroundView];
+        _backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.contentSize.width, 40)];
+//        _backgroundView.backgroundColor = [UIColor blueColor];
+        [self addSubview:_backgroundView];
+        [self sendSubviewToBack:_backgroundView];
         
         if (i == _currentIndex) {
             _selectedView = [[UIView alloc] initWithFrame:_titleLabel.frame];
-            _selectedView.backgroundColor = [UIColor grayColor];
-            [backgroundView addSubview:_selectedView];
+//            _selectedView.backgroundColor = [UIColor grayColor];
+            [_backgroundView addSubview:_selectedView];
         }
     }
 }
@@ -89,11 +92,25 @@
     [self.tapDelegate tapFrom:_currentIndex to:tapLabel.tag - 100];
     
     self.currentIndex = tapLabel.tag - 100;
-    
-    
-    
-    
-    
+}
+
+#pragma mark -Setters
+- (void)setTitleColor:(UIColor *)titleColor
+{
+    for (int i = 0; i < _titles.count; i ++) {
+        UILabel * titleLabel = (UILabel *)[self viewWithTag:i + 100];
+        titleLabel.textColor = titleColor;
+    }
+}
+
+- (void)setSelectedColor:(UIColor *)selectedColor
+{
+    _selectedView.backgroundColor = selectedColor;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    _backgroundView.backgroundColor = backgroundColor;
 }
 
 @end
