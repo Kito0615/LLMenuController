@@ -1,5 +1,8 @@
 #LLMenuController
 
+#####Demo
+![](https://github.com/Kito0615/LLMenuController/raw/master/test.gif)
+
 ####Introduction
 #####This is a self definition navigation menu controller.
 #####Use this navigation controller, you can create a menu like NetEase News.
@@ -17,6 +20,9 @@
 #####If you like this. Please `Star`.
 ----------------------------------------------------
 ####中文说明
+#####效果图
+![](https://github.com/Kito0615/LLMenuController/raw/master/test.gif)
+
 #####这是一个菜单导航控制器，通过它你可以实现类似"网易新闻"的菜单导航。
 
 ####如何使用
