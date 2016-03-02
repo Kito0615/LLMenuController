@@ -34,41 +34,90 @@
 {
     CGFloat lastTitleW = LL_ZERO;
     CGFloat lastTitleX = LL_ZERO;
-    for (int i = LL_ZERO; i < titles.count; i ++) {
-        NSString * title = titles[i];
-        
-        CGFloat titleW = [title boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, TITLE_HEIGHT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:TITLE_FONT_SIZE]} context:nil].size.width;
-        CGFloat titleH = TITLE_HEIGHT;
-        CGFloat titleX = lastTitleX + lastTitleW + TITLE_TOP_SPACE;
-        CGFloat titleY = TITLE_TOP_SPACE;
-        
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(titleX, titleY, titleW, titleH)];
-        _titleLabel.tag = BASIC_TAG + i;
-        _titleLabel.backgroundColor = [UIColor clearColor];
-        _titleLabel.text = title;
-        _titleLabel.font = [UIFont systemFontOfSize:TITLE_FONT_SIZE - 5];
-        _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.userInteractionEnabled = YES;
-        
-        UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLabel:)];
-        [_titleLabel addGestureRecognizer:tapGesture];
-        
-        [self addSubview:_titleLabel];
-        lastTitleX = titleX;
-        lastTitleW = titleW;
-        self.contentSize = CGSizeMake(lastTitleX + lastTitleW + TITLE_TOP_SPACE, TITLE_SCROLL_HEIGHT);
-        
-        _backgroundView = [[UIView alloc] initWithFrame:CGRectMake(LL_ZERO, LL_ZERO, self.contentSize.width, TITLE_SCROLL_HEIGHT)];
+    
+    if ([self titleMaxLengthLongerThanScreenWidth]) {
+        for (int i = LL_ZERO; i < titles.count; i ++) {
+            NSString * title = titles[i];
+            
+            CGFloat titleW = [title boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, TITLE_HEIGHT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:TITLE_FONT_SIZE]} context:nil].size.width;
+            CGFloat titleH = TITLE_HEIGHT;
+            CGFloat titleX = lastTitleX + lastTitleW + TITLE_TOP_SPACE;
+            CGFloat titleY = TITLE_TOP_SPACE;
+            
+            _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(titleX, titleY, titleW, titleH)];
+            _titleLabel.tag = BASIC_TAG + i;
+            _titleLabel.backgroundColor = [UIColor clearColor];
+            _titleLabel.text = title;
+            _titleLabel.font = [UIFont systemFontOfSize:TITLE_FONT_SIZE - 5];
+            _titleLabel.textAlignment = NSTextAlignmentCenter;
+            _titleLabel.userInteractionEnabled = YES;
+            
+            UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLabel:)];
+            [_titleLabel addGestureRecognizer:tapGesture];
+            
+            [self addSubview:_titleLabel];
+            lastTitleX = titleX;
+            lastTitleW = titleW;
+            self.contentSize = CGSizeMake(lastTitleX + lastTitleW + TITLE_TOP_SPACE, TITLE_SCROLL_HEIGHT);
+            
+            _backgroundView = [[UIView alloc] initWithFrame:CGRectMake(LL_ZERO, LL_ZERO, self.contentSize.width, TITLE_SCROLL_HEIGHT)];
+            [self addSubview:_backgroundView];
+            [self sendSubviewToBack:_backgroundView];
+            
+            if (i == _currentIndex) {
+                _selectedView = [[UIView alloc] initWithFrame:_titleLabel.frame];
+                _selectedView.layer.cornerRadius = SELECTED_TITLE_CORNER_RADIUS;
+                _selectedView.layer.masksToBounds = YES;
+                [_backgroundView addSubview:_selectedView];
+            }
+        }
+    } else {
+        _backgroundView = [[UIView alloc] initWithFrame:CGRectMake(LL_ZERO, LL_ZERO, SCREEN_WIDTH, TITLE_SCROLL_HEIGHT)];
         [self addSubview:_backgroundView];
         [self sendSubviewToBack:_backgroundView];
         
-        if (i == _currentIndex) {
-            _selectedView = [[UIView alloc] initWithFrame:_titleLabel.frame];
-            _selectedView.layer.cornerRadius = SELECTED_TITLE_CORNER_RADIUS;
-            _selectedView.layer.masksToBounds = YES;
-            [_backgroundView addSubview:_selectedView];
+        CGFloat lastTitleX = LL_ZERO;
+        CGFloat lastTitleW = LL_ZERO;
+        
+        for (int i = 0; i < titles.count; i ++) {
+            
+            CGFloat titleW = (SCREEN_WIDTH - TITLE_TOP_SPACE * (titles.count + 1)) / titles.count;
+            CGFloat titleH = TITLE_HEIGHT;
+            
+            CGFloat titleX = TITLE_TOP_SPACE + lastTitleW + lastTitleX;
+            CGFloat titleY = TITLE_TOP_SPACE;
+            
+            
+            _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(titleX, titleY, titleW, titleH)];
+            _titleLabel.text = _titles[i];
+            _titleLabel.tag = BASIC_TAG + i;
+            _titleLabel.font = [UIFont systemFontOfSize:TITLE_FONT_SIZE - 5];
+            _titleLabel.textAlignment = NSTextAlignmentCenter;
+            [self addSubview:_titleLabel];
+            
+            if (i == _currentIndex) {
+                _selectedView = [[UIView alloc] initWithFrame:_titleLabel.frame];
+                _selectedView.layer.cornerRadius = SELECTED_TITLE_CORNER_RADIUS;
+                _selectedView.layer.masksToBounds = YES;
+                [_backgroundView addSubview:_selectedView];
+            }
+            lastTitleW = titleW;
+            lastTitleX = titleX;
+            self.contentSize = CGSizeMake(SCREEN_WIDTH, TITLE_SCROLL_HEIGHT);
         }
     }
+}
+
+- (BOOL)titleMaxLengthLongerThanScreenWidth
+{
+    CGFloat maxTitleLength;
+    for (int i = LL_ZERO; i < _titles.count; i ++) {
+        NSString * tempTitle = _titles[i];
+        CGFloat tempTitleW = [tempTitle boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, TITLE_HEIGHT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:TITLE_FONT_SIZE]} context:nil].size.width;
+        maxTitleLength += tempTitleW + TITLE_TOP_SPACE;
+    }
+    maxTitleLength += TITLE_TOP_SPACE;
+    return maxTitleLength > SCREEN_WIDTH;
 }
 
 - (void)setCurrentIndex:(NSInteger)currentIndex
