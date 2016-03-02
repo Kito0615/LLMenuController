@@ -6,7 +6,11 @@
 //  Copyright © 2016年 AnarL. All rights reserved.
 //
 
+#define COLOR_WITH_RGB_VALUE(RGB_VALUE)     [UIColor colorWithRed:RGB_VALUE.red / 255.0 green:RGB_VALUE.green / 255.0 blue:RGB_VALUE.blue / 255.0  alpha:1]
+
+
 #import "AppDelegate.h"
+#import "NSString+HexToRGB.h"
 
 @interface AppDelegate ()
 {
@@ -23,16 +27,22 @@
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.backgroundColor = [UIColor whiteColor];
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 6; i ++) {
+    for (int i = 0; i < 9; i ++) {
         UITableViewController * subViewController = [[UITableViewController alloc] init];
         subViewController.view.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 255.0 green:arc4random() % 255 / 255.0 blue:arc4random() % 255 / 255.0 alpha:1];
         [controllers addObject:subViewController];
     }
-    VC = [[ViewController alloc] initWithControllers:controllers titles:@[@"最新资讯", @"重要新闻", @"手机", @"电脑", @"X-Box", @"微软相关"]];
-    VC.title = @"新闻分类";
-    VC.menuBackgroundColor = [UIColor lightGrayColor];
-    VC.menuTitleColor = [UIColor redColor];
-    VC.menuSelecteColor = [UIColor greenColor];
+    VC = [[ViewController alloc] initWithControllers:controllers titles:@[@"热门", @"新上榜", @"连载", @"生活家", @"世间事", @"@IT", @"市集", @"七日热门", @"三十日热门"]];
+    VC.title = @"发现";
+    
+    RGBColor backgroundColor = [NSString hexStringToRGB:@"#009999"];
+    RGBColor titleColor = [NSString hexStringToRGB:@"#66CCCC"];
+    RGBColor selectedColor = [NSString hexStringToRGB:@"#CCFFFF"];
+    
+    
+    VC.menuBackgroundColor = COLOR_WITH_RGB_VALUE(backgroundColor);
+    VC.menuTitleColor = COLOR_WITH_RGB_VALUE(titleColor);
+    VC.menuSelecteColor = COLOR_WITH_RGB_VALUE(selectedColor);
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:VC];
     _window.rootViewController = nav;
     [_window makeKeyAndVisible];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A3A12DF1C8687C500C3FD20 /* NSString+HexToRGB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3A12DE1C8687C500C3FD20 /* NSString+HexToRGB.m */; };
 		8A4386061C85631D004C24B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4386051C85631D004C24B8 /* main.m */; };
 		8A4386091C85631D004C24B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4386081C85631D004C24B8 /* AppDelegate.m */; };
 		8A4386111C85631D004C24B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4386101C85631D004C24B8 /* Assets.xcassets */; };
@@ -37,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A3A12DD1C8687C500C3FD20 /* NSString+HexToRGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HexToRGB.h"; sourceTree = "<group>"; };
+		8A3A12DE1C8687C500C3FD20 /* NSString+HexToRGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HexToRGB.m"; sourceTree = "<group>"; };
+		8A3A12E01C868E4900C3FD20 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		8A4386011C85631D004C24B8 /* LLMenuController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLMenuController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4386051C85631D004C24B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8A4386071C85631D004C24B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,9 +89,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A3A12DC1C86879C00C3FD20 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				8A3A12DD1C8687C500C3FD20 /* NSString+HexToRGB.h */,
+				8A3A12DE1C8687C500C3FD20 /* NSString+HexToRGB.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		8A4385F81C85631D004C24B8 = {
 			isa = PBXGroup;
 			children = (
+				8A3A12DC1C86879C00C3FD20 /* Category */,
 				8A4386371C85634E004C24B8 /* MenuController */,
 				8A4386031C85631D004C24B8 /* LLMenuController */,
 				8A43861D1C85631E004C24B8 /* LLMenuControllerTests */,
@@ -156,6 +170,7 @@
 				8A43863F1C85652D004C24B8 /* TitleScrollView.m */,
 				8A4386411C857754004C24B8 /* ContentScroll.h */,
 				8A4386421C857754004C24B8 /* ContentScroll.m */,
+				8A3A12E01C868E4900C3FD20 /* Common.h */,
 			);
 			name = MenuController;
 			sourceTree = "<group>";
@@ -289,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3A12DF1C8687C500C3FD20 /* NSString+HexToRGB.m in Sources */,
 				8A4386401C85652D004C24B8 /* TitleScrollView.m in Sources */,
 				8A4386091C85631D004C24B8 /* AppDelegate.m in Sources */,
 				8A43863A1C856370004C24B8 /* LLMenuController.m in Sources */,

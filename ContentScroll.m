@@ -7,6 +7,7 @@
 //
 
 #import "ContentScroll.h"
+#import "Common.h"
 
 @interface ContentScroll()
 {
@@ -19,7 +20,7 @@
 
 - (instancetype)initWithControllers:(NSArray<UIViewController *> *)controllers
 {
-    if (self = [super initWithFrame:CGRectMake(0, 40, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64 - 40)]) {
+    if (self = [super initWithFrame:CGRectMake(LL_ZERO, TITLE_SCROLL_HEIGHT, SCREEN_WIDTH, CONTENT_SCROLL_HEIGHT)]) {
         _controllers = controllers;
         [self setupControllers];
         
@@ -29,12 +30,12 @@
 
 - (void)setupControllers
 {
-    for (int i = 0; i < _controllers.count; i ++) {
+    for (int i = LL_ZERO; i < _controllers.count; i ++) {
         UIViewController * controller = _controllers[i];
-        CGFloat W = [UIScreen mainScreen].bounds.size.width;
-        CGFloat H = [UIScreen mainScreen].bounds.size.height - 64 - 40;
+        CGFloat W = SCREEN_WIDTH;
+        CGFloat H = CONTENT_SCROLL_HEIGHT;
         CGFloat X = W * i;
-        CGFloat Y = 0;
+        CGFloat Y = LL_ZERO;
         
         [controller.view setFrame:CGRectMake(X, Y, W, H)];
         [self addSubview:controller.view];

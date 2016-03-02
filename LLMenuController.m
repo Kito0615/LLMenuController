@@ -7,6 +7,7 @@
 //
 
 #import "LLMenuController.h"
+#import "Common.h"
 #import "TitleScrollView.h"
 #import "ContentScroll.h"
 @interface LLMenuController() <UIScrollViewDelegate, TapTitleProtocol>
@@ -24,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+    if (iOS7) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
 }
