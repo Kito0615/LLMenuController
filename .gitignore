@@ -1,0 +1,7 @@
+#MAC_OS_X
+*.DS_Store
+#XCODE
+*.xcodeproj
+*Test*/
+*.lproj
+*.xcassets
