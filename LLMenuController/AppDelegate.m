@@ -34,10 +34,9 @@
     }
     VC = [[ViewController alloc] initWithControllers:controllers titles:@[@"热门", @"新上榜", @"连载", @"生活家", @"世间事", @"@IT", @"市集", @"七日热门", @"三十日热门"]];
     VC.title = @"发现";
-    
-    RGBColor backgroundColor = [NSString hexStringToRGB:@"#009999"];
-    RGBColor titleColor = [NSString hexStringToRGB:@"#66CCCC"];
-    RGBColor selectedColor = [NSString hexStringToRGB:@"#CCFFFF"];
+    RGBColor backgroundColor = [NSString hexStringToRGB:@"#0099CC"];
+    RGBColor titleColor = [NSString hexStringToRGB:@"#FF6666"];
+    RGBColor selectedColor = [NSString hexStringToRGB:@"#CCCCCC"];
     
     
     VC.menuBackgroundColor = COLOR_WITH_RGB_VALUE(backgroundColor);
